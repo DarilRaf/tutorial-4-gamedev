@@ -1,0 +1,166 @@
+[gd_scene load_steps=19 format=4 uid="uid://bvdeimx7ba5i4"]
+
+[ext_resource type="PackedScene" uid="uid://bc2fujtl13g10" path="res://scenes/Player.tscn" id="1_dbkyn"]
+[ext_resource type="Texture2D" uid="uid://cr2hi6pnvl6dd" path="res://assets/bg.png" id="1_vl8hv"]
+[ext_resource type="Texture2D" uid="uid://cluh2ekc38ktx" path="res://assets/kenney_platformerpack/Spritesheets/spritesheet_gr_dirt.png" id="2_pe1dr"]
+[ext_resource type="Texture2D" uid="uid://76hi8rt1miuo" path="res://assets/kenney_platformerpack/Spritesheets/spritesheet_gr_grass.png" id="3_7d88t"]
+[ext_resource type="Texture2D" uid="uid://chgqimvh7rdh6" path="res://assets/Familiar Looking Rocket.png" id="4_d3fgp"]
+[ext_resource type="PackedScene" uid="uid://cpi136826sgwp" path="res://scenes/AreaTrigger.tscn" id="5_sk1ei"]
+[ext_resource type="Script" path="res://scenes/falling_fish.gd" id="5_ui6ik"]
+[ext_resource type="Texture2D" uid="uid://cgoa1m3nwy5mr" path="res://assets/kenney_platformerpack/PNG/Enemies/saw_move.png" id="6_2xmeo"]
+[ext_resource type="Script" path="res://scenes/area_trigger.gd" id="6_r6fek"]
+[ext_resource type="Script" path="res://scenes/spawner.gd" id="7_hamhg"]
+[ext_resource type="Script" path="res://scenes/next_area.gd" id="9_epxq5"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q0h3o"]
+texture = ExtResource("2_pe1dr")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(64, -64, 64, 64, -64, 64, -64, -64)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, 3, 55, -42, 29, -64, -2)
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(64, -64, -64, -64, -64, 64, -3, 55, 42, 29, 64, -2)
+5:0/0 = 0
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, -20)
+6:0/0 = 0
+6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(64, -64, -64, -64, -64, 64, 64, -20)
+7:0/0 = 0
+7:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+8:0/0 = 0
+8:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 9, -64, 8)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 9, -64, 8)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 9, -64, 8)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 9, -64, 8)
+4:1/0 = 0
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, -64, 64, 64, 64)
+5:1/0 = 0
+5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(64, -64, 64, 64, -64, 64)
+6:1/0 = 0
+6:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+7:1/0 = 0
+7:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+8:1/0 = 0
+8:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pnq77"]
+texture = ExtResource("3_7d88t")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -17, 48, -64, -3)
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(64, -64, -64, -64, -64, 64, 17, 48, 64, -3)
+5:0/0 = 0
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, -22)
+6:0/0 = 0
+6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(64, -64, -64, -64, -64, 64, 64, -22)
+7:0/0 = 0
+7:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+8:0/0 = 0
+8:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 5, -64, 4)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 5, -64, 4)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 5, -64, 4)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 5, -64, 4)
+4:1/0 = 0
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, 64, -64, 64)
+5:1/0 = 0
+5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(64, -64, -64, 64, 64, 64)
+6:1/0 = 0
+6:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+7:1/0 = 0
+7:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+8:1/0 = 0
+8:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+
+[sub_resource type="TileSet" id="TileSet_dx5pi"]
+tile_size = Vector2i(128, 128)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_q0h3o")
+sources/1 = SubResource("TileSetAtlasSource_pnq77")
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_y0egj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_otlsh"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hxxsc"]
+
+[sub_resource type="PackedScene" id="PackedScene_48rep"]
+_bundled = {
+"conn_count": 1,
+"conns": PackedInt32Array(0, 0, 12, 11, 2, 0, 0),
+"editable_instances": [],
+"names": PackedStringArray("FallingSaw", "contact_monitor", "max_contacts_reported", "script", "RigidBody2D", "Saw", "scale", "texture", "Sprite2D", "CollisionShape2D", "shape", "_on_body_entered", "body_entered"),
+"node_count": 3,
+"node_paths": [],
+"nodes": PackedInt32Array(-1, -1, 4, 0, -1, 3, 1, 0, 2, 1, 3, 2, 0, 0, 0, 8, 5, -1, 2, 6, 3, 7, 4, 0, 0, 0, 9, 9, -1, 2, 6, 5, 10, 6, 0),
+"variants": [true, 1, ExtResource("5_ui6ik"), Vector2(0.5, 0.5), ExtResource("6_2xmeo"), Vector2(2.59458, 2.7052), SubResource("CircleShape2D_hxxsc")],
+"version": 3
+}
+
+[node name="Level1" type="Node2D"]
+
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_vl8hv")
+
+[node name="Player" parent="." instance=ExtResource("1_dbkyn")]
+position = Vector2(46, 507)
+collision_layer = 3
+collision_mask = 3
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+scale = Vector2(0.5, 0.5)
+tile_map_data = PackedByteArray("AAALAAkAAQAFAAAAAAAMAAkAAQAHAAEAAAANAAkAAQAHAAEAAAAOAAkAAQAHAAEAAAAPAAkAAQAHAAEAAAAQAAgAAQAFAAEAAAAQAAkAAQAIAAAAAAARAAcAAQAFAAEAAAARAAgAAQAIAAAAAAARAAkAAQABAAAAAAAGAAkAAQAGAAAAAAAFAAkAAQAHAAEAAAAEAAkAAQAHAAEAAAADAAkAAQAHAAEAAAACAAkAAQAHAAEAAAABAAkAAQAHAAEAAAAAAAkAAQAHAAEAAAD//wAAAQABAAAAAAD//wEAAQABAAAAAAD//wIAAQABAAAAAAD//wMAAQABAAAAAAD//wQAAQABAAAAAAD//wUAAQABAAAAAAD//wYAAQABAAAAAAD//wcAAQABAAAAAAD//wgAAQABAAAAAAD//wkAAQABAAAAAAASAAAAAQAFAAEAAAASAAEAAQAIAAAAAAASAAIAAQABAAAAAAASAAMAAQABAAAAAAASAAQAAQABAAAAAAASAAUAAQABAAAAAAASAAYAAQABAAAAAAASAAcAAQABAAAAAAASAAgAAQABAAAAAAASAAkAAQABAAAAAAAPAAYAAQAGAAAAAAAOAAYAAQAHAAEAAAANAAYAAQAHAAEAAAAMAAYAAQAHAAEAAAALAAYAAQADAAAAAAAGAAYAAQAEAAAAAAAFAAYAAQAHAAEAAAAEAAYAAQAHAAEAAAADAAYAAQAHAAEAAAACAAYAAQAHAAEAAAABAAUAAQAEAAEAAAAAAAQAAQAEAAEAAAAAAAUAAQAHAAAAAAABAAYAAQAHAAAAAAAAAAYAAQABAAAAAAACAAMAAQAFAAAAAAADAAMAAQAHAAEAAAAEAAMAAQAHAAEAAAAFAAMAAQAHAAEAAAAMAAMAAQAHAAEAAAANAAMAAQAHAAEAAAAOAAMAAQAHAAEAAAAGAAMAAQAEAAAAAAALAAMAAQADAAAAAAAPAAMAAQAHAAEAAAAQAAMAAQAIAAAAAAARAAIAAQAIAAAAAAAQAAIAAQAFAAEAAAARAAEAAQAFAAEAAAARAAMAAQABAAAAAAATAAAAAQAHAAEAAAAUAAAAAQAEAAEAAAAXAAAAAQAFAAEAAAAYAAAAAQAHAAEAAAATAAEAAQABAAAAAAAUAAEAAQAHAAAAAAAXAAEAAQAIAAAAAAAUAAIAAQABAAAAAAAUAAMAAQABAAAAAAAUAAQAAQABAAAAAAAUAAUAAQABAAAAAAAUAAYAAQABAAAAAAATAAIAAQABAAAAAAATAAMAAQABAAAAAAATAAQAAQABAAAAAAATAAUAAQABAAAAAAATAAYAAQABAAAAAAATAAoAAQABAAEAAAAUAAoAAQACAAEAAAAVAAoAAQACAAEAAAAWAAoAAQACAAEAAAAXAAoAAQABAAAAAAAYAAoAAQABAAAAAAAXAAIAAQABAAAAAAAYAAEAAQABAAAAAAAYAAIAAQABAAAAAAAXAAMAAQABAAAAAAAXAAQAAQABAAAAAAAXAAUAAQABAAAAAAAXAAYAAQABAAAAAAAXAAcAAQABAAAAAAAXAAgAAQABAAAAAAAXAAkAAQABAAAAAAAYAAkAAQABAAAAAAAYAAgAAQABAAAAAAAYAAcAAQABAAAAAAAYAAYAAQABAAAAAAAYAAUAAQABAAAAAAAYAAQAAQABAAAAAAAYAAMAAQABAAAAAAAZAAAAAQAHAAEAAAAaAAAAAQAHAAEAAAAZAAEAAQABAAAAAAAaAAEAAQABAAAAAAAaAAIAAQABAAAAAAAaAAMAAQABAAAAAAAaAAQAAQABAAAAAAAaAAUAAQABAAAAAAAaAAYAAQABAAAAAAAaAAcAAQABAAAAAAAaAAgAAQABAAAAAAAaAAkAAQABAAAAAAAaAAoAAQABAAAAAAAZAAoAAQABAAAAAAAZAAkAAQABAAAAAAAZAAgAAQABAAAAAAAZAAcAAQABAAAAAAAZAAYAAQABAAAAAAAZAAUAAQABAAAAAAAZAAQAAQABAAAAAAAZAAMAAQABAAAAAAAZAAIAAQABAAAAAAAbAP//AQABAAAAAAAbAP7/AQABAAAAAAAbAP3/AQABAAAAAAAbAPz/AQABAAAAAAAbAAAAAQABAAAAAAAbAAEAAQABAAAAAAAbAPv/AQABAAAAAAA=")
+tile_set = SubResource("TileSet_dx5pi")
+
+[node name="RektoratRoket" type="Sprite2D" parent="."]
+position = Vector2(1284, 545)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("4_d3fgp")
+
+[node name="Area Trigger" parent="RektoratRoket" instance=ExtResource("5_sk1ei")]
+sceneName = "WinScreen"
+
+[node name="Jurang" type="Area2D" parent="."]
+position = Vector2(582, 665)
+script = ExtResource("6_r6fek")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Jurang"]
+scale = Vector2(10, 10)
+shape = SubResource("WorldBoundaryShape2D_y0egj")
+
+[node name="NextArea" type="Area2D" parent="."]
+position = Vector2(1114, 84)
+script = ExtResource("9_epxq5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NextArea"]
+shape = SubResource("RectangleShape2D_otlsh")
+
+[node name="Spawner" type="Node2D" parent="."]
+position = Vector2(820, -645)
+script = ExtResource("7_hamhg")
+obstacle = SubResource("PackedScene_48rep")
+
+[connection signal="body_entered" from="Jurang" to="Jurang" method="_on_body_entered"]
+[connection signal="body_entered" from="NextArea" to="NextArea" method="_on_body_entered"]

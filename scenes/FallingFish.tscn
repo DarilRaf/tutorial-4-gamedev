@@ -6,6 +6,8 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sis5d"]
 
 [node name="FallingFish" type="RigidBody2D"]
+mass = 0.5
+gravity_scale = 0.1
 contact_monitor = true
 max_contacts_reported = 1
 script = ExtResource("1_lvpep")

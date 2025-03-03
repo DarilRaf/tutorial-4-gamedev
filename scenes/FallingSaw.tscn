@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://cqo458cj3crdw"]
+
+[ext_resource type="Script" path="res://scenes/falling_fish.gd" id="1_181de"]
+[ext_resource type="Texture2D" uid="uid://cgoa1m3nwy5mr" path="res://assets/kenney_platformerpack/PNG/Enemies/saw_move.png" id="2_8lqc3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hxxsc"]
+
+[node name="FallingSaw" type="RigidBody2D"]
+mass = 0.5
+gravity_scale = 0.1
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("1_181de")
+
+[node name="Saw" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_8lqc3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(2.59458, 2.7052)
+shape = SubResource("CircleShape2D_hxxsc")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
