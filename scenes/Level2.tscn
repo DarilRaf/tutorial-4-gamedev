@@ -140,7 +140,7 @@ scale = Vector2(0.25, 0.25)
 texture = ExtResource("4_d3fgp")
 
 [node name="Area Trigger" parent="RektoratRoket" instance=ExtResource("5_sk1ei")]
-sceneName = "WinScreen"
+scene_name = "WinScreen"
 
 [node name="Jurang" type="Area2D" parent="."]
 position = Vector2(582, 665)

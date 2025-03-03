@@ -1,7 +1,7 @@
 extends Area2D
 
-@onready var player: CharacterBody2D = $"../Player"
 var camera: Camera2D
+@onready var player: CharacterBody2D = $"../Player"
 
 
 # Called when the node enters the scene tree for the first time.
