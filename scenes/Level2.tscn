@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://bvdeimx7ba5i4"]
+[gd_scene load_steps=20 format=4 uid="uid://bvdeimx7ba5i4"]
 
 [ext_resource type="PackedScene" uid="uid://bc2fujtl13g10" path="res://scenes/Player.tscn" id="1_dbkyn"]
 [ext_resource type="Texture2D" uid="uid://cr2hi6pnvl6dd" path="res://assets/bg.png" id="1_vl8hv"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" path="res://scenes/area_trigger.gd" id="6_r6fek"]
 [ext_resource type="Script" path="res://scenes/spawner.gd" id="7_hamhg"]
 [ext_resource type="Script" path="res://scenes/next_area.gd" id="9_epxq5"]
+[ext_resource type="PackedScene" uid="uid://clirhvwg845jx" path="res://scenes/LifeCounter.tscn" id="12_d6c45"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q0h3o"]
 texture = ExtResource("2_pe1dr")
@@ -117,7 +118,7 @@ _bundled = {
 "version": 3
 }
 
-[node name="Level1" type="Node2D"]
+[node name="Level2" type="Node2D"]
 
 [node name="Background" type="TextureRect" parent="."]
 offset_right = 40.0
@@ -162,6 +163,10 @@ shape = SubResource("RectangleShape2D_otlsh")
 position = Vector2(820, -645)
 script = ExtResource("7_hamhg")
 obstacle = SubResource("PackedScene_48rep")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="GUI" parent="CanvasLayer" instance=ExtResource("12_d6c45")]
 
 [connection signal="body_entered" from="Jurang" to="Jurang" method="_on_body_entered"]
 [connection signal="body_entered" from="NextArea" to="NextArea" method="_on_body_entered"]
