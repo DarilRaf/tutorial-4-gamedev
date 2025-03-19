@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=3 uid="uid://fvsn57k0hbxc"]
+
+[ext_resource type="FontFile" uid="uid://g0e4g4332ft0" path="res://assets/Fonts/Raw/CC Wild Words Roman.ttf" id="1_vknln"]
+[ext_resource type="Script" path="res://scenes/back_menu.gd" id="2_ixcq5"]
+
+[node name="GameOver" type="ColorRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.376471, 0, 0, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.5
+offset_top = -45.0
+offset_right = 300.5
+offset_bottom = 45.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 30
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_vknln")
+theme_override_font_sizes/font_size = 100
+text = "GAME OVER"
+
+[node name="BackMenu" type="LinkButton" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 36
+text = "Back to Menu"
+underline = 1
+script = ExtResource("2_ixcq5")
+scene_to_load = "MainMenu"
+
+[connection signal="pressed" from="VBoxContainer/BackMenu" to="VBoxContainer/BackMenu" method="_on_pressed"]

@@ -145,6 +145,7 @@ scene_name = "WinScreen"
 [node name="Jurang" type="Area2D" parent="."]
 position = Vector2(582, 665)
 script = ExtResource("6_r6fek")
+scene_name = "Level2"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Jurang"]
 scale = Vector2(10, 10)
